@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#090d12">
+    <meta name="description" content="可触控旋转并随角度变色反光的 WebGL 全息卡">
+    <title>日落全息卡</title>
+    <link rel="stylesheet" href="./assets/preview.css">
+    <script type="module" src="./assets/preview.js"></script>
+  </head>
+  <body>
+    <main>
+      <div id="toolbar" class="toolbar" hidden>
+        <button id="reset" type="button">复位</button>
+        <button id="flip" type="button" hidden>翻面</button>
+      </div>
+      <p id="render-error" class="renderError" role="alert" hidden></p>
+      <article id="card" class="card" tabindex="0" hidden>
+        <div id="rotator" class="rotator">
+          <div class="front">
+            <canvas id="material-canvas" class="materialCanvas" aria-hidden="true"></canvas>
+            <img id="background" class="background" alt="">
+            <img id="subject-shadow" class="subjectShadow" alt="" aria-hidden="true">
+            <img id="subject" class="subject" alt="" aria-hidden="true">
+          </div>
+          <div id="back" class="back" aria-hidden="true" hidden>
+            <div class="surface"><img id="back-image" class="background" alt=""></div>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
